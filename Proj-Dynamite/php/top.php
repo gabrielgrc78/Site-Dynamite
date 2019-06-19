@@ -24,7 +24,7 @@ session_start();
 	<div class="topnav" id="navbar">
         <a href="?p=index">Home</a> <!--dont touch this-->
 
-      	<a href=""></a>
+      	<a href="">haha</a>
 
     <?php
     if (isset($_SESSION['userid'])) {
