@@ -48,8 +48,7 @@ session_start();
                 </div>';
     } else {
         echo '<a onclick="document.getElementById(\'id01\').style.display=\'block\'" style="width:auto;float: right;">Login</a>';
-        echo '<a href="?p=register" style="float: right;">Register</a>
-<!--<a onclick="document.getElementById(\'id02\').style.display=\'block\'" style="width:auto;float: right;">Sign Up</a>-->';
+        echo '<a href="?p=register" style="float: right;">Register</a>';
     }
     ?>
 
