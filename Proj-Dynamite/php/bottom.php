@@ -7,7 +7,7 @@
             <?php
             $ipaddress = getenv("REMOTE_ADDR");
             Echo "Your IP Address is " . $ipaddress;
-            Echo " <p>Copyright &copy; Gabriel Garcia 2019.</p>";
+            Echo " <p>Copyright &copy; ProjectDynamite 2019.</p>";
             ?>
         </footer>
     </body>
