@@ -12,10 +12,6 @@ switch ($page) {
         $getpage = "html/index";
         $header = "home";
         break;
-    case "test":
-        $getpage = "php/test";
-        $header = "test";
-        break;
     case "register":
         $getpage = "php/register";
         $header = "registration";
@@ -23,18 +19,6 @@ switch ($page) {
     case "login":
         $getpage = "php/login";
         $header = "login";
-        break;
-    case "achievements":
-        $getpage = "html/achievements";
-        $header = "Achievements";
-        break;
-    case "contact":
-        $getpage = "html/contact";
-        $header = "Contact Information";
-        break;
-    case "database":
-        $getpage = "html/database";
-        $header = "Database Portal";
         break;
     case "serverstatus":
         $getpage = "html/serverstatus";

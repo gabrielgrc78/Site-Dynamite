@@ -31,7 +31,7 @@ session_start();
 
 	<div class="topnav" id="navbar">
         <a href="?p=index">Home</a> <!--dont touch this-->
-				
+
       	<a href=""></a>
 
     <?php
@@ -41,7 +41,6 @@ session_start();
               <a class="dropbtn">Admin Tools</a>
               <div class="dropdown-content">
               <a href="?p=test">Test Connection</a>
-              <a href="http://localhost/phpmyadmin/">Database Portal</a>
               <a href="?p=serverstatus">Server Status</a>
 
               </div>
