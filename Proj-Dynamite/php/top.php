@@ -12,18 +12,10 @@ session_start();
 <link rel="stylesheet" href="css/modal.css">
 <title><?php echo $servername ?> - <?php echo $header ?></title>
 <meta name="viewport" content="width=device=width, initial-scale=1">
-<meta http-equiv="X-UA-Compatible"
-	content="IE=9; IE=8; IE=7; IE=5; IE=EDGE; chrome=1">
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link href="https://fonts.googleapis.com/css?family=Ubuntu+Condensed"
-	rel="stylesheet">
-<link rel="stylesheet"
-	href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
-	integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
-    crossorigin="anonymous">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <meta http-equiv="refresh" content="30">
+<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=5; IE=EDGE; chrome=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Ubuntu+Condensed" rel="stylesheet">
+<meta http-equiv="refresh" content="30">
 </head>
 </div>
 

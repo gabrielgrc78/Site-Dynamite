@@ -8,5 +8,6 @@ CREATE TABLE ProjectDynamite.accounts
     username TINYTEXT                           NOT NULL,
     email    TINYTEXT                           NOT NULL,
     password LONGTEXT                           NOT NULL
-) AUTO_INCREMENT = 1
+) ENGINE= InnoDB
+  AUTO_INCREMENT = 1
   DEFAULT CHARSET = latin1;

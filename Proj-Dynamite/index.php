@@ -24,7 +24,6 @@ switch ($page) {
         $getpage = "html/serverstatus";
         $header = "Server Status";
         break;
-
     default:
         $title = $servername . "";
         $getpage = "html/index";
