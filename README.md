@@ -3,13 +3,13 @@ Site for the class project.
 
 // Front end //
 
-Marcus Salas
-Jesus De Leon
+Marcus Salas,
+Jesus De Leon.
 
 // Back End //
 
-Gabriel Garcia
-Junior Jaundoo
+Gabriel Garcia,
+Junior Jaundoo.
 
 // Project Manager of the week //
 
