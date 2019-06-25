@@ -1,32 +1,22 @@
 DROP DATABASE IF EXISTS ProjectDynamite;
 CREATE DATABASE ProjectDynamite;
 
-DROP TABLE IF EXISTS ProjectDynamite.ExecutiveAccounts;
-CREATE TABLE ProjectDynamite.ExecutiveAccounts(
-    `ExecId`   INT(11) AUTO_INCREMENT PRIMARY KEY NOT NULL,
+DROP TABLE IF EXISTS ProjectDynamite.UserAccounts;
+CREATE TABLE ProjectDynamite.UserAccounts(
+    `UserId`   INT(11) AUTO_INCREMENT PRIMARY KEY NOT NULL,
     `username` VARCHAR(50)                        NOT NULL,
     `email`    VARCHAR(50)                        NOT NULL,
     `password` LONGTEXT                           NOT NULL,
-    `role`     TINYTEXT                           NOT NULL,
-	UNIQUE KEY `ExecName`(`username`)
-)ENGINE=InnoDB AUTO_INCREMENT=1 ;
-
-DROP TABLE IF EXISTS ProjectDynamite.StudentAccount;
-CREATE TABLE ProjectDynamite.StudentAccount(
-  `StudentId` int(11) AUTO_INCREMENT PRIMARY KEY NOT NULL,
-  `Username`  VARCHAR(50)                        NOT NULL,
-  `email`     VARCHAR(50)                        NOT NULL,
-  `password`  LONGTEXT                           NOT NULL,
-  `classes`   TINYTEXT                           NOT NULL
-
+    `Userlevel`TINYTEXT                           NOT NULL,
+    `classes`  TINYTEXT                           NULL,
+    UNIQUE (`username`)
 )ENGINE=InnoDB AUTO_INCREMENT=1 ;
 
 DROP TABLE IF EXISTS ProjectDynamite.SecurityLogs;
 CREATE TABLE ProjectDynamite.SecurityLogs(
-  `Student`       VARCHAR(50)                   NOT NULL,
-  `Executives`    VARCHAR(50)                   NOT NULL,
-  `lastlogin`     TIMESTAMP   NULL     DEFAULT  NULL,
-  `CreatedDate`   TIMESTAMP   NOT NULL DEFAULT  CURRENT_TIMESTAMP,
-  KEY `SecurityLogs_ibfk_1`(`Student`),
-  FOREIGN KEY (`Student`) REFERENCES `StudentAccount`(`StudentId`) ON DELETE CASCADE
-)ENGINE=InnoDB;
+  `SecId`      		INT(11)		AUTO_INCREMENT PRIMARY KEY 	NOT NULL,
+  `username`		VARCHAR(50)								NOT NULL,
+  `lastlogin`       TIMESTAMP   NULL     	   DEFAULT    	NULL,
+  `CreatedDate`     TIMESTAMP   NOT NULL 	   DEFAULT    	CURRENT_TIMESTAMP,
+CONSTRAINT `securitylogs_ibfk_1` FOREIGN KEY `SecurityLogs`(`username`) REFERENCES `UserAccounts`(`username`) ON DELETE CASCADE ON UPDATE CASCADE
+)ENGINE=InnoDB AUTO_INCREMENT=21 ;
