@@ -9,7 +9,7 @@ CREATE TABLE ProjectDynamite.UserAccounts(
     `password`         LONGTEXT                            	    NOT NULL,
     `Userlevel`        TINYTEXT                           	    NOT NULL,
     `classes`          TINYTEXT                           	    NULL,
-	  `CreatedDate`      TIMESTAMP    NOT NULL 	      DEFAULT     CURRENT_TIMESTAMP,
+	`CreatedDate`      TIMESTAMP    NOT NULL 	    DEFAULT     CURRENT_TIMESTAMP,
      UNIQUE (`username`)
 )ENGINE=InnoDB AUTO_INCREMENT=1 ;
 

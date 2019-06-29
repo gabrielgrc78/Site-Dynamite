@@ -1,3 +1,3 @@
 <?php
-header('Location: /Proj-Dynamite/index.php');
+include_once('Proj-Dynamite/index.php');
 ?>
