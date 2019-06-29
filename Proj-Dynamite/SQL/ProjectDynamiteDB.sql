@@ -20,5 +20,5 @@ CREATE TABLE ProjectDynamite.SecurityLogs (
     `lastlogin` TIMESTAMP 	NULL 		       DEFAULT     NULL,
     CONSTRAINT `securitylogs_ibfk_1` FOREIGN KEY (`username`)
         REFERENCES `UserAccounts` (`username`)
-        ON DELETE CASCADE ON UPDATE CASCADE
+        ON DELETE CASCADE 
 )  ENGINE=INNODB AUTO_INCREMENT=20;
