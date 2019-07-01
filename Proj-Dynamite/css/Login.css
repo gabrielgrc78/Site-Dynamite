@@ -1,0 +1,16 @@
+body{
+margin:0px;
+padding: 0px;
+font-family:sans-serif;
+background:#F1F1F1;
+}
+
+.box{
+width: 300px;
+padding: 40px;
+position: absolute;
+top:50%;
+left:50%;
+transform: translate(-50, -50);
+background:#90EE90;
+}
