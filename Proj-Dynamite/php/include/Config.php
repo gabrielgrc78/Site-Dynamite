@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "sitedatabase";
+$dbname = "ProjectDynamite";
 
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 
