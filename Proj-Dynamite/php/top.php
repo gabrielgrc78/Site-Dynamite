@@ -9,7 +9,7 @@ session_start();
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="css/normalize.css">
 <link rel="stylesheet" type="text/css" href="css/main.css">
-<link rel="stylesheet" href="css/modal.css">
+<link rel="stylesheet" type="text/css" href="css/login.css">
 <title><?php echo $servername ?> - <?php echo $header ?></title>
 <meta name="viewport" content="width=device=width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=5; IE=EDGE; chrome=1">
@@ -47,72 +47,19 @@ session_start();
                 </div>
                 </div>';
     } else {
-        echo '<a onclick="document.getElementById(\'id01\').style.display=\'block\'" style="width:auto;float: right;">Login</a>';
+        echo '<a href="?p=login" style="float: right;">Login</a>';
         echo '<a href="?p=register" style="float: right;">Register</a>';
     }
     ?>
 
 
-</div>
-	<div id="id01" class="modal">
 
-		<form class="modal-content animate" action="php/include/dologin.php"
-			method="post">
-
-			<div class="container">
-				<label for="MailAD"><b>Username/email</b></label> <input type="text"
-					placeholder="Enter Username or email" name="MailAD" required> <label
-					for="Password"><b>Password</b></label> <input type="password"
-					placeholder="Enter Password" name="Password" required>
-
-				<button type="submit" name="login-submit">Login</button>
-				<label> <input type="checkbox" checked="checked" name="remember">
-					Remember me
-				</label>
-			</div>
-
-			<div class="container" style="background-color: #f1f1f1">
-				<button type="button"
-					onclick="document.getElementById('id01').style.display='none'"
-					class="cancelbtn">Cancel</button>
-			</div>
-
-		</form>
-
-	</div>
 
 
 	<script src="javascript/navbar.js">async = true;</script>
 	<script src="javascript/status.js">async = true;</script>
 
 	<script>
-    async = true;
-    // Get the modal
-    var modal1 = document.getElementById('id01');
-
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function (event) {
-        if (event.target == modal1) {
-            modal1.style.display = "none";
-        }
-    };
-    async = true;
-    // Get the modal
-    var modal2 = document.getElementById('id02');
-
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function (event) {
-        if (event.target == modal2) {
-            modal2.style.display = "none";
-        }
-        };
-    var tunnel = document.getElementById('id03');
-    window.onclick = function (event) {
-        if (event.target == tunnel) {
-            alert('you will now be leaving this site');
-        }
-    }
-
 </script>
 </body>
 </html>
