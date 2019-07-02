@@ -9,7 +9,7 @@ session_start();
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="css/normalize.css">
 <link rel="stylesheet" type="text/css" href="css/main.css">
-<link rel="stylesheet" href="css/modal.css">
+<link rel="stylesheet" type="text/css" href="css/login.css">
 <title><?php echo $servername ?> - <?php echo $header ?></title>
 <meta name="viewport" content="width=device=width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=5; IE=EDGE; chrome=1">
