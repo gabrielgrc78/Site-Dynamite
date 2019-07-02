@@ -32,7 +32,5 @@
     <a href="?p=register">Signup</a>
 </fieldset>
 </body>
-<?php
-include "bottom.php";
-?>
+
 </html>

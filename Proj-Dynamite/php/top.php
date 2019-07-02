@@ -58,8 +58,6 @@ session_start();
 
 	<script src="javascript/navbar.js">async = true;</script>
 	<script src="javascript/status.js">async = true;</script>
-
-	<script>
-</script>
+	<script src="javascript/sidebar.js">async = true;</script>
 </body>
 </html>
