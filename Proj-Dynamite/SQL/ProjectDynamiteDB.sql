@@ -33,12 +33,12 @@ UNIQUE(`ClassName`)
 
 DROP TABLE IF EXISTS projectdynamite.StudentEnrollment;
 CREATE TABLE projectdynamite.StudentEnrollment (
-`Username` VARCHAR(50) 					NOT NULL,
-`ClassCode` INT(11)					NOT NULL,
-`ClassName` VARCHAR(50) 				NOT NULL,
-`ClassStatus` TINYTEXT 					NOT NULL,
+`Username` VARCHAR(50) 					 NOT NULL,
+`ClassCode` INT(11)				    	 NULL,
+`ClassName` VARCHAR(50) 				 NULL,
+`ClassStatus` TINYTEXT 					 NULL,
 CONSTRAINT `studentenrollment_ibfk_1` FOREIGN KEY (`Username`) REFERENCES `UserAccounts`(`Username`) ON DELETE CASCADE,
 CONSTRAINT `studentenrollment_ibfk_2` FOREIGN KEY (`ClassCode`) REFERENCES `ClassRoster`(`ClassCode`) ON DELETE CASCADE,
 CONSTRAINT `studentenrollment_ibfk_3` FOREIGN KEY (`ClassName`) REFERENCES `ClassRoster`(`ClassName`) ON DELETE CASCADE
-)ENGINE=INNODB AUTO_INCREMENT=1;
+)ENGINE=INNODB;
 
