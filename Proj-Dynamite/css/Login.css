@@ -8,9 +8,25 @@ background:#F1F1F1;
 .box{
 width: 300px;
 padding: 40px;
-position: absolute;
+position:center;
 top:50%;
 left:50%;
 transform: translate(-50, -50);
 background:#90EE90;
+text-align: center;
+}
+
+.box input[type= "text"], .box input[type="password"]{
+border:0;
+background:none;
+display:block;
+margin:20px auto;
+text-align: center;
+border:2px solid #F1F1F1;
+padding:14px 10px;
+width:200px;
+outline:none;
+color:#006400;
+border-radius:24px;
+transition: 0.25s;
 }
