@@ -25,8 +25,7 @@ if (isset($_POST["signup-submit"])) {
         echo "<script>alert('Invalid Email and username')</script>";
         exit();
     } elseif ($password !== $passwordVerify) {
-        //header("location:../../?p=register?error=passwordcheck&uid=" . $username . "&mail" . $email);
-        echo "<script>alert('Invalid Email and username')</script>";
+        echo "<script>alert('Invalid password')</script>";
         exit();
     } else {
         $sql = "SELECT username FROM accounts WHERE username=?";
