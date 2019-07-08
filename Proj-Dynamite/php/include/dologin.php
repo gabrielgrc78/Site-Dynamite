@@ -6,13 +6,13 @@ if (isset($_POST['login-submit'])) {
     $password = $_POST['Password'];
 
     if (empty($emailuser) || empty($password)) {
-        header("location:../../?p=login?error=emptyfields");
+        echo "<script>window.alert('There an Error in Processing this Request'); window.location.href='?p=login';</script>";
         exit();
     } else {
         $sql = "SELECT * FROM accounts WHERE username=? OR email=?;";
         $stmt = mysqli_stmt_init($conn);
         if (!mysqli_stmt_prepare($stmt, $sql)) {
-            header("location:../../?p=login?error=sqlerror");
+          echo "<script>window.alert('SQL ERROR, Please Contact Support to resolve this issue.'); window.location.href='?p=login';</script>";
             exit();
         } else {
             mysqli_stmt_bind_param($stmt, "ss", $emailuser, $emailuser);
@@ -21,21 +21,22 @@ if (isset($_POST['login-submit'])) {
             if ($row = mysqli_fetch_assoc($result)) {
                 $pwdCheck = password_verify($password, $row['password']);
                 if ($pwdCheck == false) {
-                    header("location:../../?p=login?error=wrongpwd");
+                  //  header("location:../../?p=login?error=wrongpwd");
+                echo "<script>window.alert('Wrong Password.'); window.location.href='?p=login';</script>";
                     exit();
                 } elseif ($pwdCheck == true) {
                     session_start();
-                    $_SESSION['userid'] = $row['id'];
-                    $_SESSION['useruid'] =$row['username'];
-                    
-                    header("location:../../index.php?login=success");
+                    $_SESSION['userauth'] = $row['Userlevel'];
+                    $_SESSION['useruid'] = $row['username'];
+
+                    echo "<script>window.alert('Login Success.'); window.location.href='?p=login';</script>";
                     exit();
                 } else {
-                    header("location:../../?p=login?error=wrongpwd");
+                  echo "<script>window.alert('Wrong Password.'); window.location.href='?p=login';</script>";
                     exit();
                 }
             } else {
-                header("location:../../?p=login?error=nouser");
+              echo "<script>window.alert('No User.'); window.location.href='?p=login';</script>";
                 exit();
             }
         }
