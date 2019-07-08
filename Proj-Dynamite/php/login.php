@@ -20,7 +20,7 @@
 
     <button type="submit" name="login-submit">Login</button>
     <label>Remember me <input type="checkbox" checked="checked" name="remember">
-    
+
     </label>
 
   </div>
@@ -31,8 +31,5 @@
 
 </body>
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 1d9ae211394e64fb4b65b7b3c2980d5c53343c38
 </html>

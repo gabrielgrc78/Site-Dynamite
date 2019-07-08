@@ -6,7 +6,6 @@
         <footer class="footer">
             <?php
             $ipaddress = getenv("REMOTE_ADDR");
-            Echo "Your IP Address is " . $ipaddress;
             Echo " <p>Copyright &copy; ProjectDynamite 2019.</p>";
             ?>
         </footer>
