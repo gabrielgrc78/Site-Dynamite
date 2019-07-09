@@ -20,6 +20,10 @@ switch ($page) {
         $getpage = "php/login";
         $header = "login";
         break;
+    case "student":
+        $getpage = "html/Students";
+        $header = "Students";
+        break;
     default:
         $title = $servername . "";
         $getpage = "html/index";

@@ -1,17 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
-<!--Do not add a head tag here.-->
-
-<body>
-<div class="w3-overlay w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" id="myOverlay"></div>
-
-<div>
-  <button class="w3-button w3-white w3-xxlarge" onclick="w3_open()">&#9776;</button>
-  <div class="w3-container">
-      <li><a href="#" class="w3-bar-item w3-button">Link 1</a></li>
-      <li><a href="#" class="w3-bar-item w3-button">Link 2</a></li>
-      <li><a href="#" class="w3-bar-item w3-button">Link 3</a></li>
-    </div>
-  </div>
-</div>
-</body>
+<html>
+    <head>
+        <title>Calendar</title>
+        <script type="text/javascript" src="script.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <div id="calendar">
+            <p id="calendar-day"></p>
+            <p id="calendar-date"></p>
+            <p id="calendar-month-year"></p>
+        </div>
+    </body>
+</html>
