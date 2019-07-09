@@ -28,8 +28,8 @@ session_start();
     <?php
 		$active = $_SESSION['active'];
 		$level = $_SESSION['userauth'];
-		if ($active == 1) {
-			// code...
+
+	
 
     if ($level == Admin) {
 
@@ -68,16 +68,12 @@ session_start();
 							</form>
 							</div>
 							</div>';
-    } else {
-        echo '<a href="?p=login" style="float: right;">Login</a>';
-        echo '<a href="?p=register" style="float: right;">Register</a>';
     }
-	} elseif ($active = 0) {
-		echo '<a href="?p=login" style="float: right;">Login</a>';
-		echo '<a href="?p=register" style="float: right;">Register</a>';
-		echo "<script>window.alert('Your Account seems to be Inactive, please consult with your instructor in regards to this.');</script>";
 
-	}
+	else {
+		 echo '<a href="?p=login" style="float: right;">Login</a>';
+		 echo '<a href="?p=register" style="float: right;">Register</a>';
+ }
     ?>
 
 
