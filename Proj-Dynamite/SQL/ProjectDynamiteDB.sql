@@ -5,9 +5,9 @@ DROP TABLE IF EXISTS ProjectDynamite.UserAccounts;
 CREATE TABLE ProjectDynamite.UserAccounts(
     `UserId`           INT(11)      AUTO_INCREMENT  PRIMARY KEY NOT NULL,
     `Username`         VARCHAR(50)                              NOT NULL,
-    `Password`         VARCHAR(50)                        	        NOT NULL,
-    `Userlevel`        ENUM ('Student','Faculty','Admin')       NOT NULL,
-    `UserStatus`       BOOLEAN									NOT NULL,
+    `Password`         VARCHAR(50)                        	    NOT NULL,
+    `Userlevel`        ENUM ('Student','Faculty','Admin')       NULL 'Admin',
+    `UserStatus`       BOOLEAN									                NOT NULL '1',
     `CreatedDate`      TIMESTAMP    NOT NULL 	    DEFAULT     CURRENT_TIMESTAMP,
      UNIQUE (`Username`)
 )ENGINE=InnoDB AUTO_INCREMENT=1 ;
@@ -33,7 +33,7 @@ DROP TABLE IF EXISTS projectdynamite.AttendanceTracking;
 CREATE TABLE projectdynamite.AttendanceTracking (
 	`AttID`      INT(11)     AUTO_INCREMENT PRIMARY KEY 		NOT NULL,
 	`Username`   VARCHAR(50) 								                NOT NULL,
-  `Attendance` ENUM (`Tardy`,`Present`,`Absent`)          NOT NULL,
+  `Attendance` ENUM ('Tardy','Present','Absent')          NOT NULL,
 	`ClassCode`  INT(11)   								                  NOT NULL,
   `timestamp`  TIMESTAMP    NOT NULL 	    DEFAULT         CURRENT_TIMESTAMP,
   CONSTRAINT `attendancetracking_ibfk_1` FOREIGN KEY (`username`) REFERENCES `UserAccounts`(`Username`) ON DELETE CASCADE,

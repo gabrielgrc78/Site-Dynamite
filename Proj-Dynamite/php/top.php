@@ -27,7 +27,8 @@ session_start();
       	<a href="">haha</a>
 
     <?php
-    if (isset($_SESSION['userid'])) {
+		$level = $_SESSION['userauth'];
+    if ($level == Admin) {
 
         echo '<div class="dropdown" style="float:left;" >
               <a class="dropbtn">Admin Tools</a>
@@ -46,6 +47,24 @@ session_start();
                 </form>
                 </div>
                 </div>';
+    } elseif ($level == Faculty) {
+			echo '<div class="dropdown" id  >
+							<a class="dropbtn">User:' . $_SESSION['useruid'] . '</a>
+							<div class="dropdown-content">
+							<form action="php/include/dologout.php" method="post" >
+							<button type="submit" name="logout-submit" class="lg">Logout</button>
+							</form>
+							</div>
+							</div>';
+    } elseif ($level == Student) {
+			echo '<div class="dropdown" id  >
+							<a class="dropbtn">User:' . $_SESSION['useruid'] . '</a>
+							<div class="dropdown-content">
+							<form action="php/include/dologout.php" method="post" >
+							<button type="submit" name="logout-submit" class="lg">Logout</button>
+							</form>
+							</div>
+							</div>';
     } else {
         echo '<a href="?p=login" style="float: right;">Login</a>';
         echo '<a href="?p=register" style="float: right;">Register</a>';

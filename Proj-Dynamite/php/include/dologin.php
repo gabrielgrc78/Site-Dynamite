@@ -1,25 +1,25 @@
 <?php
 
 if (isset($_POST['login-submit'])) {
-    require 'config.php';
+    require_once('config.php');
     $emailuser = $_POST['MailAD'];
     $password = $_POST['Password'];
 
     if (empty($emailuser) || empty($password)) {
-        echo "<script>window.alert('There an Error in Processing this Request'); window.location.href='?p=login';</script>";
+        echo "<script>window.alert('The fields are empty, please put credentials to process your request.'); window.location.href='?p=login';</script>";
         exit();
     } else {
-        $sql = "SELECT * FROM accounts WHERE username=? OR email=?;";
+        $sql = "SELECT * FROM UserAccounts WHERE Username=?;";
         $stmt = mysqli_stmt_init($conn);
         if (!mysqli_stmt_prepare($stmt, $sql)) {
-          echo "<script>window.alert('SQL ERROR, Please Contact Support to resolve this issue.'); window.location.href='?p=login';</script>";
+          echo "<script>window.alert('There a backend error, this issue will be resolved shortly, please try again later.'); window.location.href='?p=login';</script>";
             exit();
         } else {
-            mysqli_stmt_bind_param($stmt, "ss", $emailuser, $emailuser);
+            mysqli_stmt_bind_param($stmt, "s", $emailuser);
             mysqli_stmt_execute($stmt);
             $result = mysqli_stmt_get_result($stmt);
             if ($row = mysqli_fetch_assoc($result)) {
-                $pwdCheck = password_verify($password, $row['password']);
+                $pwdCheck = password_verify($password, $row['Password']);
                 if ($pwdCheck == false) {
                   //  header("location:../../?p=login?error=wrongpwd");
                 echo "<script>window.alert('Wrong Password.'); window.location.href='?p=login';</script>";
@@ -27,8 +27,8 @@ if (isset($_POST['login-submit'])) {
                 } elseif ($pwdCheck == true) {
                     session_start();
                     $_SESSION['userauth'] = $row['Userlevel'];
-                    $_SESSION['useruid'] = $row['username'];
-
+                    $_SESSION['useruid'] = $row['Username'];
+                    $_SESSION['active'] = $row['UserStatus'];
                     echo "<script>window.alert('Login Success.'); window.location.href='?p=login';</script>";
                     exit();
                 } else {
@@ -36,7 +36,7 @@ if (isset($_POST['login-submit'])) {
                     exit();
                 }
             } else {
-              echo "<script>window.alert('No User.'); window.location.href='?p=login';</script>";
+              echo "<script>window.alert('You dont seem to be registered, If you believe this to be an error please contact support to resolve this issue.'); window.location.href='?p=login';</script>";
                 exit();
             }
         }

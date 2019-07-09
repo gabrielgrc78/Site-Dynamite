@@ -14,7 +14,7 @@
   <div class="container">
 
     <label for="MailAD"></label> <input type="text"
-      placeholder="Enter Username or email" name="MailAD" required> <label
+      placeholder="Enter Username" name="MailAD" required> <label
       for="Password"></label> <input type="password"
       placeholder="Enter Password" name="Password" required>
 

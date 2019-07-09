@@ -26,6 +26,6 @@ switch ($page) {
         break;
 }
 include_once('php/top.php');
-include_once($getpage . ".html");
-include_once($getpage . ".php");
-include ('php/bottom.php');
+include($getpage . ".html");
+include($getpage . ".php");
+include_once('php/bottom.php');
