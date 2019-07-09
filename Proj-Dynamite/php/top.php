@@ -14,7 +14,7 @@ session_start();
 <meta name="viewport" content="width=device=width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=5; IE=EDGE; chrome=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link href="https://fonts.googleapis.com/css?family=Ubuntu+Condensed" rel="stylesheet">
+
 <meta http-equiv="refresh" content="30">
 </head>
 </div>
@@ -29,16 +29,16 @@ session_start();
     <?php
 		$active = $_SESSION['active'];
 		$level = $_SESSION['userauth'];
-		if ($active == 1) {
-			// code...
+
+	
 
     if ($level == Admin) {
 
         echo '<div class="dropdown" style="float:left;" >
               <a class="dropbtn">Admin Tools</a>
               <div class="dropdown-content">
-              <a href="?p=test">Test Connection</a>
-              <a href="?p=serverstatus">Server Status</a>
+              <a href="#">User Account Controls</a>
+
 
               </div>
               </div>';
@@ -69,16 +69,12 @@ session_start();
 							</form>
 							</div>
 							</div>';
-    } else {
-        echo '<a href="?p=login" style="float: right;">Login</a>';
-        echo '<a href="?p=register" style="float: right;">Register</a>';
     }
-	} elseif ($active = 0) {
-		echo '<a href="?p=login" style="float: right;">Login</a>';
-		echo '<a href="?p=register" style="float: right;">Register</a>';
-		echo "<script>window.alert('Your Account seems to be Inactive, please consult with your instructor in regards to this.');</script>";
 
-	}
+	else {
+		 echo '<a href="?p=login" style="float: right;">Login</a>';
+		 echo '<a href="?p=register" style="float: right;">Register</a>';
+ }
     ?>
 
 
