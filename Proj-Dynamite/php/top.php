@@ -24,10 +24,13 @@ session_start();
 	<div class="topnav" id="navbar">
         <a href="?p=index">Home</a> <!--dont touch this-->
 
-      	<a href="">haha</a>
 
     <?php
+		$active = $_SESSION['active'];
 		$level = $_SESSION['userauth'];
+		if ($active == 1) {
+			// code...
+
     if ($level == Admin) {
 
         echo '<div class="dropdown" style="float:left;" >
@@ -69,6 +72,12 @@ session_start();
         echo '<a href="?p=login" style="float: right;">Login</a>';
         echo '<a href="?p=register" style="float: right;">Register</a>';
     }
+	} elseif ($active = 0) {
+		echo '<a href="?p=login" style="float: right;">Login</a>';
+		echo '<a href="?p=register" style="float: right;">Register</a>';
+		echo "<script>window.alert('Your Account seems to be Inactive, please consult with your instructor in regards to this.');</script>";
+
+	}
     ?>
 
 
