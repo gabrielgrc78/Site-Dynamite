@@ -24,6 +24,10 @@ switch ($page) {
         $getpage = "html/Students";
         $header = "Students";
         break;
+    case "faculty":
+        $getpage = "html/faculty";
+        $header = "Faculty";
+        break;
     default:
         $title = $servername . "";
         $getpage = "html/index";

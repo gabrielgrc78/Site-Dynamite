@@ -24,7 +24,8 @@ session_start();
 	<div class="topnav" id="navbar">
         <a href="?p=index">Home</a> <!--dont touch this-->
 
-      	<a href="?p=student">Students</a>
+		  <a href="?p=student">Students</a>
+		  <a href="?p=faculty">Faculty</a>
 
     <?php
 		$active = $_SESSION['active'];
