@@ -1,38 +1,27 @@
 <?php
 if (isset($_POST["signup-submit"])) {
-    require 'Config.php';
-    $username = $_POST['uid'];
+    require_once('Config.php');
     $email = $_POST['mail'];
     $password = $_POST['pwd'];
     $passwordVerify = $_POST['pwd-repeat'];
 
-    if (empty($username) || empty($email) || empty($password) || empty($passwordVerify)) {
-       echo ("<script LANGUAGE='JavaScript'>
-    window.alert('Empty fields detected');
-    window.location.href='?p=register';
-    </script>");
-        exit();
-    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL) && !preg_match("/^[a-zA-Z0-9]*$/", $username)) {
-        header("location:../../?p=register");
-        echo "<script>alert('Invalid Email and username')</script>";
+     if (!filter_var($email, FILTER_VALIDATE_EMAIL) && !preg_match("/^[a-zA-Z0-9]*$/", $username)) {
+        echo ("<script LANGUAGE='JavaScript'> window.alert('Invalid email'); window.location.href='?p=register'; </script>");
+        //echo "<script>alert('Invalid Email and username')</script>";
         exit();
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
        // header("location:../../?p=register?error=invalidmail&uid=" . $username);
-        echo "<script>alert('Invalid Email and username')</script>";
-        exit();
-    } elseif (!preg_match("/^[a-zA-Z0-9]*$/", $username)) {
-       // header("location:../../?p=register?error=invaliduid&mail=" . $email);
-        echo "<script>alert('Invalid Email and username')</script>";
+        echo "<script>window.alert('Invalid Email'); window.location.href='?p=register';</script>";
         exit();
     } elseif ($password !== $passwordVerify) {
-        echo "<script>alert('Invalid password')</script>";
+        echo "<script>window.alert('The two passwords do not match, please try again.)</script>";
         exit();
     } else {
-        $sql = "SELECT username FROM accounts WHERE username=?";
+        $sql = "SELECT Username FROM useraccounts WHERE Username=?";
         $stmt = mysqli_stmt_init($conn);
         if (!mysqli_stmt_prepare($stmt, $sql)) {
            // header("location:../../?p=register?error=sqlerror");
-            echo "<script>alert('Invalid Email and username')</script>";
+            echo "<script>window.alert('SQL Connection ERROR, Please Contact Support to resolve this issue.'); window.location.href='?p=register';</script>";
             exit();
         } else {
             mysqli_stmt_bind_param($stmt, "s", $username);
@@ -41,21 +30,21 @@ if (isset($_POST["signup-submit"])) {
             $resultCheck = mysqli_stmt_num_rows($stmt);
             if ($resultCheck > 0) {
              //   header("location:../../?p=register?error=usertaken&mail" . $email);
-                echo "<script>alert('Invalid Email and username')</script>";
+                echo "<script>window.alert('Username has been taken, please try another Username.'); window.location.href='?p=register';</script>";
                 exit();
             } else {
-                $sql = "INSERT INTO accounts (username, email, password) VALUES (?,?,?)";
+                $sql = "INSERT INTO useraccounts (Username, password) VALUES (?,?)";
                 $stmt = mysqli_stmt_init($conn);
                 if (!mysqli_stmt_prepare($stmt, $sql)) {
                   //  header("location:../../?p=register?error=sqlerror");
-                    echo "<script>alert('Invalid Email and username')</script>";
+                    echo "<script>window.alert('SQL Register ERROR, Please Contact Support to resolve this issue.'); window.location.href='?p=register';</script>";
                     exit();
                 } else {
                     $pswhash = password_hash($password, PASSWORD_DEFAULT);
-                    mysqli_stmt_bind_param($stmt, "sss", $username, $email, $pswhash);
+                    mysqli_stmt_bind_param($stmt, "ss", $email, $pswhash);
                     mysqli_stmt_execute($stmt);
                   //  header("location:../../index.php?signup=success");
-                    echo "<script>alert('Success')</script>";
+                    echo "<script>window.alert('Registration Successful.'); window.location.href='?p=register';</script>";
                     exit();
                 }
             }
