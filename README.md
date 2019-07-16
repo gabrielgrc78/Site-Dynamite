@@ -13,8 +13,13 @@ Junior Jaundoo.
 
 // Project Manager of the week //
 
+week 1 -> NULL
+
 Week 2 -> Gabriel Garcia
+
 Week 3 -> Jesus Deleon
+
 Week 4 -> Marcus Salas
+
 # Week 5 -> Junior Jaundoo
 ## Week 6 -> Gabriel Garcia
