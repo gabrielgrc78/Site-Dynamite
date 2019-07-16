@@ -30,7 +30,7 @@ session_start();
 		$active = $_SESSION['active'];
 		$level = $_SESSION['userauth'];
 
-	
+
 
     if ($level == Admin) {
 
@@ -43,7 +43,7 @@ session_start();
               </div>
               </div>';
 
-        echo '<div class="dropdown" id  >
+         echo '<div class="dropdown" id  >
                 <a class="dropbtn">User:' . $_SESSION['useruid'] . '</a>
                 <div class="dropdown-content">
                 <form action="php/include/dologout.php" method="post" >
