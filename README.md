@@ -13,4 +13,4 @@ Junior Jaundoo.
 
 // Project Manager of the week //
 
-Gabriel Garcia
+Junior Jaundoo
