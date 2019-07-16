@@ -13,7 +13,7 @@ Junior Jaundoo.
 
 // Project Manager of the week //
 
-week 1 -> NULL
+Week 1 -> NULL
 
 Week 2 -> Gabriel Garcia
 
