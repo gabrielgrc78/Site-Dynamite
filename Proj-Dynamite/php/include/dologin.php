@@ -1,11 +1,11 @@
 <?php
 
 if (isset($_POST['login-submit'])) {
-    require_once('config.php');
-    $emailuser = $_POST['MailAD'];
+    require_once ('config.php');
+    $email = $_POST['MailAD'];
     $password = $_POST['Password'];
 
-    if (empty($emailuser) || empty($password)) {
+    if (empty($email) || empty($password)) {
         echo "<script>window.alert('The fields are empty, please put credentials to process your request.'); window.location.href='?p=login';</script>";
         exit();
     } else {
@@ -15,7 +15,7 @@ if (isset($_POST['login-submit'])) {
           echo "<script>window.alert('There a backend error, this issue will be resolved shortly, please try again later.'); window.location.href='?p=login';</script>";
             exit();
         } else {
-            mysqli_stmt_bind_param($stmt, "s", $emailuser);
+            mysqli_stmt_bind_param($stmt, "s", $email);
             mysqli_stmt_execute($stmt);
             $result = mysqli_stmt_get_result($stmt);
             if ($row = mysqli_fetch_assoc($result)) {
@@ -25,16 +25,20 @@ if (isset($_POST['login-submit'])) {
                 echo "<script>window.alert('Wrong Password.'); window.location.href='?p=login';</script>";
                     exit();
                 } elseif ($pwdCheck == true) {
+                    if ($row['UserStatus'] == 1){
                     session_start();
                     $_SESSION['userauth'] = $row['Userlevel'];
                     $_SESSION['useruid'] = $row['Username'];
-                    $_SESSION['active'] = $row['UserStatus'];
+                    
                     echo "<script>window.alert('Login Success.'); window.location.href='?p=login';</script>";
                     exit();
-                } else {
-                  echo "<script>window.alert('Wrong Password.'); window.location.href='?p=login';</script>";
-                    exit();
-                }
+                    } else{
+                        echo "<script>window.alert('Account inactive.'); window.location.href='?p=login';</script>";
+                    }
+                } //else {
+                  //echo "<script>window.alert('Wrong Password.'); window.location.href='?p=login';</script>";
+                  // exit();
+                  //}
             } else {
               echo "<script>window.alert('You dont seem to be registered, If you believe this to be an error please contact support to resolve this issue.'); window.location.href='?p=login';</script>";
                 exit();

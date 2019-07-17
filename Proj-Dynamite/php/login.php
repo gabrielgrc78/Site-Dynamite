@@ -8,8 +8,7 @@
 
   <div class="box">
 <h1>Login</h1>
-<form class="modal-content animate" action="php/include/dologin.php"
-  method="post">
+<form class="modal-content animate" action="php/include/dologin.php" method="post">
 
   <div class="container">
 

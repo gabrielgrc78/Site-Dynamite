@@ -4,13 +4,16 @@
 ?>
 <body>
 <main>
-    <fieldset>
+    <fieldset class="rectangle">
         <h1>Sign up</h1>
-        <form action="php/include/doregister.php" method="post">
-            <input type="text" name="mail" placeholder="email" required>
-            <input type="password" name="pwd" placeholder="password" required>
-            <input type="password" name="pwd-repeat" placeholder="repeat password" required>
-            <button type="submit" name="signup-submit">Sign up</button>
+        <form action="php/include/doregister.php" method="post" >
+            <input type="text" class="inputfield" name="mail" placeholder="email" required>
+            <br><br><br>
+            <input type="password" class="inputfield" name="pwd" placeholder="password" required>
+            <br><br><br>
+            <input type="password" class="inputfield" name="pwd-repeat" placeholder="repeat password" required>
+            <br><br><br>
+            <button type="submit" class="submit-mdn" name="signup-submit">Sign up</button>
         </form>
     </fieldset>
 </main>
