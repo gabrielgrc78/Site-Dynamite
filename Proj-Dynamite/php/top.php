@@ -31,7 +31,6 @@ session_start();
 </div>
 <ul class="nav navbar-nav">
 <li class="active"><a href="?p=index">Home</a></li>
-<li class="active"><a href="#">Home</a></li>
 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Student <span class="caret"></span></a>
 <ul class="dropdown-menu">
 <li><a href="?p=student">Enrollment</a></li>
