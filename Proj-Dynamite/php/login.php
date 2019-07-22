@@ -7,7 +7,8 @@
 <body>
 
   <div class="box">
-<h1>Login</h1>
+<h1>Course Registration System</h1>
+
 <form class="modal-content animate" action="php/include/dologin.php"
   method="post">
 
@@ -26,6 +27,7 @@
   </div>
 
 </div>
+
 </form>
 
 

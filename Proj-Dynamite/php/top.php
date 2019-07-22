@@ -9,10 +9,8 @@ session_start();
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="css/normalize.css">
 <link rel="stylesheet" type="text/css" href="css/main.css">
-<link rel="stylesheet" type="text/css" href="css/login.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/Login.css">
+<link rel="stylesheet" type="text/css" href="css/nav.css">
 <title><?php echo $servername ?> - <?php echo $header ?></title>
 <meta name="viewport" content="width=device=width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=5; IE=EDGE; chrome=1">
@@ -24,26 +22,12 @@ session_start();
 
 <body>
 
-<nav class="navbar navbar-inverse">
-<div class="container-fluid">
-<div class="navbar-header">
-<a class="navbar-brand">Registration Application</a>
-</div>
-<ul class="nav navbar-nav">
-<li class="active"><a href="?p=index">Home</a></li>
-<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Student <span class="caret"></span></a>
-<ul class="dropdown-menu">
-<li><a href="?p=student">Enrollment</a></li>
-</ul>
-</li>
-<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Faculty <span class="caret"></span></a>
-<ul class="dropdown-menu">
-<li><a href="?p=faculty">Enrollment</a></li>
-</ul>
-</li>
 
-<ul class="nav navbar-nav navbar-right">
 
+  <ul>
+    <li><a href="?p=index">Home</a></li>
+    <li><a href="?p=student">Student</a></li>
+    <li><a href="?p=faculty">Faculty</a></li>
 
 
 
@@ -94,15 +78,12 @@ session_start();
     }
 
 	else {
-    echo '<li><a href="?p=register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>';
-		echo '<li><a href="?p=login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>';
+    echo '<li style="float:right"><a class="active" href="?p=login">Login</a></li>';
+		echo '<li style="float:right"><a class="active" href="?p=register">Sign up</a></li>';
 
  }
     ?>
-  </ul>
-  </div>
-  </nav>
-
+</ul>
 
 
 	<script src="javascript/navbar.js">async = true;</script>
