@@ -9,10 +9,16 @@ session_start();
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="css/normalize.css">
 <link rel="stylesheet" type="text/css" href="css/main.css">
+<<<<<<< HEAD
 <link rel="stylesheet" type="text/css" href="css/login.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+=======
+<link rel="stylesheet" type="text/css" href="css/Login.css">
+<link rel="stylesheet" type="text/css" href="css/sign up.css">
+<link rel="stylesheet" type="text/css" href="css/nav.css">
+>>>>>>> 47b5623009d52750adada54c92fc15911647bfeb
 <title><?php echo $servername ?> - <?php echo $header ?></title>
 <meta name="viewport" content="width=device=width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=5; IE=EDGE; chrome=1">
@@ -44,7 +50,24 @@ session_start();
 
 <ul class="nav navbar-nav navbar-right">
 
+<<<<<<< HEAD
+=======
+  <ul>
+    <li><a href="?p=index">Home</a></li>
+    <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Student</a>
+    <div class="dropdown-content">
+      <a href="?p=student">Enrollment</a>
+    </div>
+  </li>
+>>>>>>> 47b5623009d52750adada54c92fc15911647bfeb
 
+    <li class="dropdown">
+        <a href="javascript:void(0)" class="dropbtn">Faculty</a>
+        <div class="dropdown-content">
+          <a href="?p=faculty">Enrollment</a>
+        </div>
+      </li>
 
 
 
