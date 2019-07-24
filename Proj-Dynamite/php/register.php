@@ -4,20 +4,31 @@
 ?>
 <body>
 
-  <div class="rectangle">
-    <form action="/action_page.php">
-      <label for="email">Email</label>
-      <input type="text" id="email" name="mail" placeholder="email" required>
+  <div style="width:400px; margin-right:auto; margin-left:auto; border:0px solid #000;">
 
-      <label for="password">Password</label>
-      <input type="password" id="password" name="pwd" placeholder="password" required>
+  <form action="/action_page.php" method="POST">
 
-      <label for="repeat password">Repeat Password</label>
-      <input type="password" id="pwd-repeat" name="pwd-repeat" placeholder="repeat password">
 
-      <button type="submit" name="signup-submit">Sign up</button>
-    </form>
-  </div>
+  <p><label>
+  <input name="mail" type="email" size="50" placeholder="Email" required>
+  </label></p>
+
+  <p><label>
+  <input name="pwd" type="password" size="50" placeholder="Password" required>
+  </label></p>
+
+  <p><label>
+  <input name="pwd-repeat" type="password" size="50" placeholder="Repeat Password" required>
+  </label></p>
+
+  <P>
+  <input type="submit" name="signup-submit" value="Sign Up">
+
+  </P>
+
+
+  </form>
+</div>
 
 </body>
 </html>
