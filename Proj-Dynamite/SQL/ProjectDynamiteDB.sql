@@ -62,3 +62,8 @@ CREATE TABLE projectdynamite.StudentEnrollment (
         REFERENCES `ClassRoster` (`ClassName`)
         ON DELETE CASCADE
 )  ENGINE=INNODB;
+ 
+ DROP TABLE IF EXISTS projectdynamite.FacultyList;
+ CREATE TABLE projectdynamite.FacultyList (
+     `Username` VARCHAR(50) NOT NULL
+ )
