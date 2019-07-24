@@ -3,16 +3,21 @@
 //include "php/top.php";
 ?>
 <body>
-<main>
-    <fieldset>
-        <h1>Sign up</h1>
-        <form action="php/include/doregister.php" method="post">
-            <input type="text" name="mail" placeholder="email" required>
-            <input type="password" name="pwd" placeholder="password" required>
-            <input type="password" name="pwd-repeat" placeholder="repeat password" required>
-            <button type="submit" name="signup-submit">Sign up</button>
-        </form>
-    </fieldset>
-</main>
+
+  <div class="rectangle">
+    <form action="/action_page.php">
+      <label for="email">Email</label>
+      <input type="text" id="email" name="mail" placeholder="email" required>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="pwd" placeholder="password" required>
+
+      <label for="repeat password">Repeat Password</label>
+      <input type="password" id="pwd-repeat" name="pwd-repeat" placeholder="repeat password">
+
+      <button type="submit" name="signup-submit">Sign up</button>
+    </form>
+  </div>
+
 </body>
 </html>

@@ -10,6 +10,7 @@ session_start();
 <link rel="stylesheet" type="text/css" href="css/normalize.css">
 <link rel="stylesheet" type="text/css" href="css/main.css">
 <link rel="stylesheet" type="text/css" href="css/Login.css">
+<link rel="stylesheet" type="text/css" href="css/sign up.css">
 <link rel="stylesheet" type="text/css" href="css/nav.css">
 <title><?php echo $servername ?> - <?php echo $header ?></title>
 <meta name="viewport" content="width=device=width, initial-scale=1">
@@ -26,9 +27,19 @@ session_start();
 
   <ul>
     <li><a href="?p=index">Home</a></li>
-    <li><a href="?p=student">Student</a></li>
-    <li><a href="?p=faculty">Faculty</a></li>
+    <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Student</a>
+    <div class="dropdown-content">
+      <a href="?p=student">Enrollment</a>
+    </div>
+  </li>
 
+    <li class="dropdown">
+        <a href="javascript:void(0)" class="dropbtn">Faculty</a>
+        <div class="dropdown-content">
+          <a href="?p=faculty">Enrollment</a>
+        </div>
+      </li>
 
 
 
@@ -79,7 +90,7 @@ session_start();
 
 	else {
     echo '<li style="float:right"><a class="active" href="?p=login">Login</a></li>';
-		echo '<li style="float:right"><a class="active" href="?p=register">Sign up</a></li>';
+		echo '<li style="float:right"><a href="?p=register">Sign up</a></li>';
 
  }
     ?>
