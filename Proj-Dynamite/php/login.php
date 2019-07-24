@@ -12,10 +12,10 @@
 
   <div class="container">
 
-    <label for="MailAD"></label> <input type="text"
-      placeholder="Enter Username" name="MailAD" required> <label
-      for="Password"></label> <input type="password"
-      placeholder="Enter Password" name="Password" required>
+    <label for="MailAD"></label>
+    <input type="email"placeholder="Enter Username" name="MailAD" required>
+    <label for="Password"></label>
+    <input type="password" placeholder="Enter Password" name="Password" required>
 
     <button type="submit" name="login-submit">Login</button>
     <label>Remember me <input type="checkbox" checked="checked" name="remember">
