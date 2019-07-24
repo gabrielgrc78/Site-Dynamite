@@ -1,0 +1,23 @@
+.rectangle{
+    position: absolute;
+    width: 394px;
+    height: 276px;
+
+    background: #C4C4C4;
+    border-radius: 40px;
+}
+.inputfield{
+    position: absolute;
+    width: 319px;
+    height: 37px;
+
+    background: #FFFFFF;
+    border-radius: 10px;
+}
+
+.submit-mdn{
+    position: absolute;
+    width: 42px;
+    height: 39px;
+    background: #35BF42;
+}
