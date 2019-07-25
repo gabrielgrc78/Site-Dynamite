@@ -1,3 +1,4 @@
+
 input[type=email], select {
   padding: 12px 20px;
   margin: 2px 0;
@@ -19,7 +20,7 @@ input[type=password], select {
 }
 
 input[type=submit] {
-  background-color: lightslategray;
+  background-color:  #4CAF50;
   color: white;
   padding: 14px 2px;
   margin: 8px 0;
@@ -27,4 +28,14 @@ input[type=submit] {
   border-radius: 8px;
   cursor: pointer;
 
+}
+
+.flex-login {
+  display: flex;
+  justify-content: center;
+  margin: 60px;
+  padding: 20px;
+  width: 600px;
+  background-color: #90EE90;
+  text-align:center;
 }

@@ -3,25 +3,10 @@
 //include "php/top.php";
 ?>
 <body>
-<<<<<<< HEAD
-<main>
-    <fieldset class="rectangle">
-        <h1>Sign up</h1>
-        <form action="php/include/doregister.php" method="post" >
-            <input type="email" class="inputfield" name="mail" placeholder="email" required>
-            <br><br><br>
-            <input type="password" class="inputfield" name="pwd" placeholder="password" required>
-            <br><br><br>
-            <input type="password" class="inputfield" name="pwd-repeat" placeholder="repeat password" required>
-            <br><br><br>
-            <button type="submit" class="submit-mdn" name="signup-submit">Sign up</button>
-        </form>
-    </fieldset>
-</main>
-=======
 
-  <div style="width:400px; margin-right:auto; margin-left:auto; border:0px solid #000;">
-
+  <div style="width:400px; margin-right:220px; margin-left:220px;">
+  <div class="flex-login">
+  
   <form action="/action_page.php" method="POST">
 
 
@@ -45,7 +30,7 @@
 
   </form>
 </div>
+</div>
 
->>>>>>> 083abd3f85460a1bc21f9bc7451915d04fe74cbc
 </body>
 </html>
