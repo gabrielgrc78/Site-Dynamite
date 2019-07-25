@@ -47,8 +47,6 @@ session_start();
 
 <ul class="nav navbar-nav navbar-right">
 
-<<<<<<< HEAD
-=======
   <ul>
     <li><a href="?p=index">Home</a></li>
     <li class="dropdown">
@@ -57,7 +55,6 @@ session_start();
       <a href="?p=student">Enrollment</a>
     </div>
   </li>
->>>>>>> 47b5623009d52750adada54c92fc15911647bfeb
 
     <li class="dropdown">
         <a href="javascript:void(0)" class="dropbtn">Faculty</a>
