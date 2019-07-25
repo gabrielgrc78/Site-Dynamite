@@ -1,3 +1,4 @@
 .float-right-sm {
-  background-color: yellow
-   
+  background-color: yellow;
+  float: left;
+  
