@@ -14,10 +14,7 @@ if (isset($_POST['login-submit'])) {
     $email = mysqli_real_escape_string($_POST['MailAD']);
     $password = mysqli_real_escape_string($_POST['Password']);
 
-    if (empty($email) || empty($password)) {
-        echo "<script>window.alert('The fields are empty, please put credentials to process your request.'); window.location.href='?p=login';</script>";
-        exit();
-    } else {
+     if ($conn == true){
         $sql = "SELECT * FROM UserAccounts WHERE Username=?;";
         $stmt = mysqli_stmt_init($conn);
         if (!mysqli_stmt_prepare($stmt, $sql)) {
