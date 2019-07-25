@@ -23,7 +23,7 @@ session_start();
 
 <body>
   <ul>
-    <li><a href="?p=index">Home</a></li>
+    <li><a href="?p=index.html">Home</a></li>
 
   <li class="dropdown">
   <a href="javascript:void(0)" class="dropbtn">Student</a>
