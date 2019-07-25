@@ -1,4 +1,4 @@
-<style>
+
     * {
       box-sizing: border-box;
     }
@@ -29,9 +29,6 @@
       text-align:center;
     }
 
-    <html>
-    <head>
-    <style>
     * {box-sizing: border-box;}
     ul {list-style-type: none;}
     body {font-family: Verdana, sans-serif;}
@@ -113,9 +110,6 @@
     @media screen and (max-width: 290px) {
       .weekdays li, .days li {width: 12.2%;}
     }
-    </style>
-    </head>
-    <body>
     
     
     ul {list-style-type: none;}
