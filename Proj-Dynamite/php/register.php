@@ -4,10 +4,10 @@
 ?>
 <body>
 
-<<<<<<< HEAD
+
   <div style="width:400px; margin-right:220px; margin-left:220px;">
   <div class="flex-login">
-  
+
   <form action="/action_page.php" method="POST">
 
 
@@ -47,7 +47,7 @@
       <button type="submit" name="signup-submit">Sign up</button>
     </form>
   </div>
->>>>>>> 97b70f74d6afe79cd032c6a55e4825d84a7b01cf
+
 
 </body>
 </html>
