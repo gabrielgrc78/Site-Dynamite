@@ -8,11 +8,7 @@
   <div style="width:400px; margin-right:220px; margin-left:220px;">
   <div class="flex-login">
 
-<<<<<<< HEAD
   <form action="php/include/doregister.php" method="POST">
-=======
-  <form action="/action_page.php" method="POST">
->>>>>>> af7376573ac3a511b0db7e4e770da5066fb8a29a
 
 
   <p><label>
