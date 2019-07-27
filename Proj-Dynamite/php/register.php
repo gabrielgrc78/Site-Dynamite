@@ -32,9 +32,6 @@
   </form>
 </div>
 </div>
-<<<<<<< HEAD
 
 </body>
-=======
->>>>>>> af7376573ac3a511b0db7e4e770da5066fb8a29a
 </html>
