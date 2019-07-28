@@ -18,3 +18,28 @@ function setText(id, val){
 
 //call calendar() when page load
 window.onload = calendar;
+function loadYears()
+{
+    // whichever date range makes the most sense
+    var startYear = 1900;
+    var endYear = 2022;
+
+    for(var i = startYear; i <= endYear; i++)
+    {
+        var doc = document.createElement("div");
+        doc.innerHTML = i;
+        doc.classList.add("dropdown-item");
+
+        doc.onclick = (function(){
+            var selectedYear = i;
+            return function(){
+                year = selectedYear;
+                document.getElementById("curYear").innerHTML = year;
+                loadCalendarDays();
+                return year;
+            }
+        })();
+
+        document.getElementById("years").appendChild(doc);
+    }
+}
