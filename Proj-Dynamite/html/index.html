@@ -1,34 +1,63 @@
-<!DOCTYPE html>
-<html>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<div class="calendar" id="calendar">
-    <div class="calendar-btn month-btn" onclick="$('#months').toggle('fast')">
-        <span id="curMonth"></span>
-        <div id="months" class="months dropdown"></div>
-    </div>
-
-    <div class="calendar-btn year-btn" onclick="$('#years').toggle('fast')">
-        <span id="curYear"></span>
-        <div id="years" class="years dropdown"></div>
-    </div>
-
-    <div class="clear"></div>
-
-    <div class="calendar-dates">
-        <div class="days">
-            <div class="day label">SUN</div>
-            <div class="day label">MON</div>
-            <div class="day label">TUE</div>
-            <div class="day label">WED</div>
-            <div class="day label">THUR</div>
-            <div class="day label">FRI</div>
-            <div class="day label">SAT</div>
-
-            <div class="clear"></div>
-        </div>
-
-        <div id="calendarDays" class="days">
-        </div>
-    </div>
-</div>
+<head>
+    <center><title>Class Schedule</title></center>
+    <style>
+     th{background-color:#90EE90;font-weight:bold;font-size:10pt}
+     .scheduled{background:#90EE90;font-size:10pt}
+    </style>
+    </head>
+    <body>
+    <h1>Class Schedule</h1>
+    <table border=1 width=100%>
+    <tr>
+    <th width=30%>Monday</th>
+    <th width=30%>Tuesday</th>
+    <th width=16%>Wednesday</th>
+    <th width=16%>Thursday</th>
+    <th width=16%>Friday</th>
+    </tr>
+    <tr>
+    <td align=center rowspan=2
+    </tr>
+    <tr>
+    <td align=center class=scheduled >Networking<br />MWTh 1:30PM-3:00PM</td>
+    <td align=center class=scheduled >Networking<br />MWTh 1:30PM-3:00PM</td>
+    <td align=center class=scheduled >Networking<br />MWTh 1:30PM-3:00PM</td>
+    </tr>
+    <tr>
+    <td align=center rowspan=2 class=scheduled >Hardware_&_Software<br />MTWTh 2:00PM-3:30PM<br>Networking<br />MWTh 1:30PM-3:00PM</td>
+    <td align=center rowspan=3 class=scheduled >Hardware_&_Software<br />MTWTh 2:00PM-3:30PM</td>
+    <td align=center rowspan=2 class=scheduled >Hardware_&_Software<br />MTWTh 2:00PM-3:30PM<br>Networking<br />MWTh 1:30PM-3:00PM</td>
+    <td align=center rowspan=2 class=scheduled >Hardware_&_Software<br />MTWTh 2:00PM-3:30PM<br>Networking<br />MWTh 1:30PM-3:00PM</td>
+    </tr>
+    <tr>
+    </tr>
+    <tr>
+    <td align=center class=scheduled >Hardware_&_Software<br />MTWTh 2:00PM-3:30PM</td>
+    <td align=center class=scheduled >Hardware_&_Software<br />MTWTh 2:00PM-3:30PM</td>
+    <td align=center class=scheduled >Hardware_&_Software<br />MTWTh 2:00PM-3:30PM</td>
+    </tr>
+    <tr>
+    <td align=center rowspan=3 class=scheduled >Web_Technologies_&_Multimedia<br />TWTh 4:00PM-5:30PM</td>
+    <td align=center rowspan=3 class=scheduled >Web_Technologies_&_Multimedia<br />TWTh 4:00PM-5:30PM</td>
+    <td align=center rowspan=3 class=scheduled >Web_Technologies_&_Multimedia<br />TWTh 4:00PM-5:30PM</td>
+    </tr>
+    <tr>
+    </tr>
+    <tr>
+    </tr>
+    <tr>
+    <td align=center rowspan=2 class=scheduled >Database_Management_&_Design<br />TTh 6:00PM-7:00PM</td>
+    <td align=center rowspan=2 class=scheduled >Database_Management_&_Design<br />TTh 6:00PM-7:00PM</td>
+    </tr>
+    <tr>
+    </tr>
+    </table>
+    <p>
+        <small>Created using <a href=http://www.stolaf.edu/people/hansonr/mysched>http://www.stolaf.edu/people/hansonr/mysched</a></small>
+    <div style=display:none><pre>
+    1 = MTWTh 2:00PM-3:30PM Hardware_&_Software
+    2 = MWTh 1:30PM-3:00PM Networking
+    3 = TWTh 4:00PM-5:30PM Web_Technologies_&_Multimedia
+    4 = TTh 6:00PM-7:00PM Database_Management_&_Design
+    </pre></div>
+    </body>
