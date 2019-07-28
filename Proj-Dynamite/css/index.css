@@ -1,4 +1,4 @@
-.windiv{
-    border: 1px solid black;
-    table-layout:nowrap
-}
+.open{color:red;background-color:#4CAF50;font-size:10pt}
+     .scheduled{background:lightgrey;font-size:10pt}
+     .office{background:lightblue;font-size:10pt}
+    .chapel{color:blue;background-color:yellow;font-size:10pt}
