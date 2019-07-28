@@ -1,5 +1,5 @@
 var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-var startYear = 2000;
+var startYear = 1990;
 var endYear = 2020;
 var month = 0;
 var year = 0;
