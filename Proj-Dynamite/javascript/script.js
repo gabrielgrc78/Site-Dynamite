@@ -1,40 +1,44 @@
-function calendar(){
-    var day=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-    var month=['January','February','March','April','May','June','July','August','September','October','November','December'];
-    var d=new Date();
-    setText('calendar-day', day[d.getDay()]);
-    setText('calendar-date', d.getDate());
-    setText('calendar-month-year', month[d.getMonth()]+' '+(1900+d.getYear()));
-};
+var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+var startYear = 2000;
+var endYear = 2020;
+var month = 0;
+var year = 0;
+var selectedDays = new Array();
+var selectedDay = '';
 
-//this function will set the text value of
- tags
-function setText(id, val){
-    if(val < 10){
-        val = '0' + val;    //add leading 0 if val < 10
+function loadCalendarMonths() {
+    for (var i = 0; i < months.length; i++) {
+        var doc = document.createElement("div");
+        doc.innerHTML = months[i];
+        doc.classList.add("dropdown-item");
+
+        doc.onclick = (function () {
+            var selectedMonth = i;
+            return function () {
+                month = selectedMonth;
+                document.getElementById("curMonth").innerHTML = `<span class='fa fa-caret-down fa-fw'></span> ${months[month]}`;
+                loadCalendarDays();
+                return month;
+            }
+        })();
+
+        document.getElementById("months").appendChild(doc);
     }
-    document.getElementById(id).innerHTML = val;
-};
+}
 
-//call calendar() when page load
-window.onload = calendar;
-function loadYears()
-{
-    // whichever date range makes the most sense
-    var startYear = 1900;
-    var endYear = 2022;
+function loadCalendarYears() {
+    document.getElementById("years").innerHTML = "";
 
-    for(var i = startYear; i <= endYear; i++)
-    {
+    for (var i = startYear; i <= endYear; i++) {
         var doc = document.createElement("div");
         doc.innerHTML = i;
         doc.classList.add("dropdown-item");
 
-        doc.onclick = (function(){
+        doc.onclick = (function () {
             var selectedYear = i;
-            return function(){
+            return function () {
                 year = selectedYear;
-                document.getElementById("curYear").innerHTML = year;
+                document.getElementById("curYear").innerHTML = `<span class='fa fa-caret-down fa-fw'></span> ${year}`;
                 loadCalendarDays();
                 return year;
             }
@@ -43,38 +47,84 @@ function loadYears()
         document.getElementById("years").appendChild(doc);
     }
 }
+
+function loadCalendarDays() {
+    document.getElementById("calendarDays").innerHTML = "";
+
+    var tmpDate = new Date(year, month, 0);
+    var num = daysInMonth(month, year);
+    var dayofweek = tmpDate.getDay();       // find where to start calendar day of week
+
+    for (var i = 0; i <= dayofweek; i++) {
+        var d = document.createElement("div");
+        d.classList.add("day");
+        d.classList.add("blank");
+        document.getElementById("calendarDays").appendChild(d);
+    }
+
+    for (var i = 0; i < num; i++) {
+        var tmp = i + 1;
+        var d = document.createElement("div");
+        d.id = "calendarday_" + i;
+        d.className = "day";
+        d.innerHTML = tmp;
+        d.dataset.day = tmp;
+
+        /* ****************** Single Day Event ********************** */
+        d.addEventListener('click', function () {
+            let _date = (month + 1) + '/' + this.dataset.day + '/' + year;
+
+            if (selectedDay == _date) {
+                selectedDay = '';
+                this.classList.toggle('selected');
+            } else {
+                selectedDay = _date;
+                var days = document.querySelectorAll('.day');
+                days.forEach(item => item.classList.remove('selected'));
+                this.classList.add('selected');
+            }
+        });
+        /* **************************************************** */
+
+        document.getElementById("calendarDays").appendChild(d);
+    }
+
+    var clear = document.createElement("div");
+    clear.className = "clear";
+    document.getElementById("calendarDays").appendChild(clear);
+}
+
 function daysInMonth(month, year)
 {
     var d = new Date(year, month+1, 0);
     return d.getDate();
 }
 
-function loadCalendarDays()
-{
-    document.getElementById("calendarDays").innerHTML = "";
+function setDate(dt) {
+    // convert the date to js object
+    // parse and check if on current month, otherwise ignore
+    let d = new Date(dt);
 
-    var tmpDate = new Date(year, month, 0);
-    var num = daysInMonth(month, year);
-    var dayofweek = tmpDate.getDay();       // find where to start calendar day of week
-    // create day prefixes
-    for(var i = 0; i <= dayofweek; i++)
-    {
-        var d = document.createElement("div");
-        d.classList.add("day");
-        d.classList.add("blank");
-        document.getElementById("calendarDays").appendChild(d);
-    }
-    for(var i = 0; i < num; i++)
-            {
-                var tmp = i + 1;
-                var d = document.createElement("div");
-                d.id = "calendarday_" + i;
-                d.className = "day";
-                d.innerHTML = tmp;
-                document.getElementById("calendarDays").appendChild(d);
-            }
+    if (d.getMonth() != NaN) {
+        if (month == d.getMonth()) {
+            let _date = (month + 1) + '/' + d.getDate() + '/' + year;
 
-            var clear = document.createElement("div");
-            clear.className = "clear";
-            document.getElementById("calendarDays").appendChild(clear);
+            var day = d.getDate() - 1;
+            selectedDay = _date;
+            var days = document.querySelectorAll('.day');
+            days.forEach(item => item.classList.remove('selected'));
+            document.getElementById(`calendarday_${day}`).classList.add('selected');
         }
+    }
+}
+
+window.addEventListener('load', function () {
+    var date = new Date();
+    month = date.getMonth();
+    year = date.getFullYear();
+    document.getElementById("curMonth").innerHTML = `<span class='fa fa-caret-down fa-fw'></span> ${months[month]}`;
+    document.getElementById("curYear").innerHTML = `<span class='fa fa-caret-down fa-fw'></span> ${year}`;
+    loadCalendarMonths();
+    loadCalendarYears();
+    loadCalendarDays();
+});
