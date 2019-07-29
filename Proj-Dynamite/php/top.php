@@ -35,7 +35,7 @@ session_start();
   <li class="dropdown">
       <a href="javascript:void(0)" class="dropbtn">Faculty</a>
       <div class="dropdown-content">
-        <a href="?p=faculty">Enrollment</a>
+        <a href="?p=faculty">Course Selection</a>
       </div>
     </li>
 

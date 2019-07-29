@@ -5,6 +5,12 @@ font-family:sans-serif;
 background:#F1F1F1;
 }
 
+.center2{
+width:600px;
+margin-right:280px;
+margin-left:280px
+}
+
 .box{
 position:center;
 top:50%;
@@ -38,7 +44,7 @@ transition: 0.25s;
 }
 .box input[type= "text"]:focus, .box input[type="email"]:focus{
 width: 280px;
-border-color:#2ecc71
+border-color:#4CAF50
 }
 .box input[type= "text"], .box input[type="password"]{
 border:0;

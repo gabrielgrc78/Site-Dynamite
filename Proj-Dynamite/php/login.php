@@ -6,7 +6,8 @@
 </head>
 <body>
 
-<div style="width:400px; margin-right:auto; margin-left:auto; border:0px solid #000;" class="box">
+<div class="center2">
+<div class="box">
 
 <h1>Course Registration System</h1>
 <form class="modal-content animate" action="php/include/dologin.php" method="post">
@@ -27,7 +28,7 @@
 
 </div>
 </form>
-
+</div>
 
 </body>
 
