@@ -23,19 +23,19 @@ if (isset($_POST['login-submit'])) {
         if (!mysqli_stmt_prepare($stmt, $sql)) {
           echo "<script>window.alert('There a backend error, this issue will be resolved shortly, please try again later.'); window.location.href='?p=login';</script>";
             exit();
-        } else {
-            mysqli_stmt_bind_param($stmt, "s", $email);
+        } elseif (mysqli_stmt_prepare($stmt, $sql)) {
+            mysqli_stmt_bind_param($stmt, "s", $emailuser );
             mysqli_stmt_execute($stmt);
             $result = mysqli_stmt_get_result($stmt);
             if ($row = mysqli_fetch_assoc($result)) {
                 $pwdCheck = password_verify($password, $row['password']);
-                var_dump($pwdCheck);
+               // var_dump($pwdCheck);
               //  $pwdCheck = $password == $row['password'];
                 if ($pwdCheck == false) {
                   //  header("location:../../?p=login?error=wrongpwd");
                 echo "<script>window.alert('Wrong Password.'); window.location.href='?p=login';</script>";
                     exit();
-                } elseif ($pwdCheck == true) {
+                } 
                     if ($row['UserStatus'] == 1){
                     session_start();
                     $_SESSION['userauth'] = $row['Userlevel'];
@@ -43,9 +43,7 @@ if (isset($_POST['login-submit'])) {
 
                     echo "<script>window.alert('Login Success.'); window.location.href='?p=login';</script>";
                     exit();
-                    } else{
-                        echo "<script>window.alert('Account inactive.'); window.location.href='?p=login';</script>";
-                    }
+                    } 
                 } else {
                   echo "<script>window.alert('Wrong Password.'); window.location.href='?p=login';</script>";
                   exit();
@@ -56,7 +54,7 @@ if (isset($_POST['login-submit'])) {
             }
         }
     }
-} else {
+ else {
     header("location:../../?p=login");
     exit();
 }
