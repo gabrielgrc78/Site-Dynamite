@@ -7,7 +7,7 @@ function calendar(){
     setText('calendar-month-year', month[d.getMonth()]+' '+(1900+d.getYear()));
 };
 
-//this function will set the text value of 
+//this function will set the text value of
  tags
 function setText(id, val){
     if(val < 10){

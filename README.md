@@ -21,5 +21,6 @@ Week 3 -> Jesus Deleon
 
 Week 4 -> Marcus Salas
 
-# Week 5 -> Junior Jaundoo
-## Week 6 -> Gabriel Garcia
+ Week 5 -> Junior Jaundoo
+ Week 6 -> Gabriel Garcia
+Week 7 -> Jesus Deleon

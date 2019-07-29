@@ -6,7 +6,7 @@
 
   <div class="center">
   <div class="flex-login">
-    
+
 <h1>Course Registration System</h1>
   <form action="/action_page.php" method="POST">
 

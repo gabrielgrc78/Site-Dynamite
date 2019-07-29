@@ -11,8 +11,8 @@ function sql_sanitize( $sCode ) {
 if (isset($_POST['login-submit'])) {
     require_once ('config.php');
 
-    $email = mysqli_real_escape_string($_POST['MailAD']);
-    $password = mysqli_real_escape_string($_POST['Password']);
+    $email = $_POST['MailAD'];
+    $password = $_POST['Password'];
 
     if (empty($email) || empty($password)) {
         echo "<script>window.alert('The fields are empty, please put credentials to process your request.'); window.location.href='?p=login';</script>";
@@ -34,7 +34,6 @@ if (isset($_POST['login-submit'])) {
                 if ($pwdCheck == false) {
                   //  header("location:../../?p=login?error=wrongpwd");
                 echo "<script>window.alert('Wrong Password.'); window.location.href='?p=login';</script>";
-                printr(var_dump($pwdCheck));
                     exit();
                 } elseif ($pwdCheck == true) {
                     if ($row['UserStatus'] == 1){
