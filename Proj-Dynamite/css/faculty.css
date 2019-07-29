@@ -182,14 +182,14 @@ span.a {
   color: gray;
 }
 
- #newsletter th {
-  border: 3px solid white;
-  padding: 8px;
+#newsletter th,  #newsletter td {
+ border: 3px solid white;
+ padding: 8px;
 }
 .bottomleft {
   position:relative;
-  left: 7%;
-  padding:90px;
+  left: 6%;
+  padding:120px;
   height: auto;
   display: block;
   width: 500px;

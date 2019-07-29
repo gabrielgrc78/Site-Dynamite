@@ -182,7 +182,7 @@ span.a {
   color: gray;
 }
 
- #newsletter th {
+ #newsletter th,  #newsletter td {
   border: 3px solid white;
   padding: 8px;
 }
