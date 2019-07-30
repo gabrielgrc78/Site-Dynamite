@@ -10,7 +10,7 @@
 <div class="box">
 
 <h1>Course Registration System</h1>
-<form class="modal-content animate" action="php/include/dologin-test.php" method="post">
+<form class="modal-content animate" action="php/include/dologin.php" method="post">
 
   <div class="container">
 

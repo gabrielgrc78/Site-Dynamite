@@ -3,12 +3,12 @@ CREATE DATABASE ProjectDynamite;
 
 DROP TABLE IF EXISTS ProjectDynamite.UserAccounts;
 CREATE TABLE ProjectDynamite.UserAccounts (
-    `UserId` INT(11) AUTO_INCREMENT PRIMARY KEY NOT NULL,
-    `Username` VARCHAR(50) NOT NULL,
-    `Password` VARCHAR(50) NOT NULL,
-    `Userlevel` ENUM('Student', 'Faculty', 'Admin') NULL,
-    `UserStatus` BOOLEAN NOT NULL,
-    `CreatedDate` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `UserId` INT(11) AUTO_INCREMENT PRIMARY KEY NOT NULL ,
+    `Username` VARCHAR(50) NOT NULL ,
+    `Password` VARCHAR(50) NOT NULL ,
+    `Userlevel` ENUM('Student', 'Faculty', 'Admin') NULL ,
+    `UserStatus` BOOLEAN NOT NULL ,
+    `CreatedDate` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ,
     UNIQUE (`Username`)
 )  ENGINE=INNODB AUTO_INCREMENT=1;
 
@@ -65,5 +65,6 @@ CREATE TABLE projectdynamite.StudentEnrollment (
  
  DROP TABLE IF EXISTS projectdynamite.FacultyList;
  CREATE TABLE projectdynamite.FacultyList (
-     `Username` VARCHAR(50) NOT NULL
+     `Username` VARCHAR(50) NOT NULL,
+     `Titles` VARCHAR(50) NULL
  )

@@ -8,7 +8,7 @@
   <div class="flex-login">
 
 <h1>Course Registration System</h1>
-  <form action="/action_page.php" method="POST">
+  <form action="php/include/doregister.php" method="POST">
 
 
   <p><label>

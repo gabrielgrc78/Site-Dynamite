@@ -1,23 +1,17 @@
 <?php
-function sql_sanitize( $sCode ) {
-    if (function_exists("mysqli_real_escape_string" ) ) {
-        $sCode = mysql_real_escape_string( $sCode );
-    } else {
-        $sCode = addslashes( $sCode );
-    }
-    return $sCode;
-}
 
 if (isset($_POST['login-submit'])) {
     require_once ('config.php');
+    require ('shower.php');
+    $demail = $_POST['MailAD'];
+    $dpassword = $_POST['Password'];
 
-    $email = $_POST['MailAD'];
-    $password = $_POST['Password'];
-
-    if (empty($email) || empty($password)) {
+    if (empty($demail) || empty($dpassword)) {
         echo "<script>window.alert('The fields are empty, please put credentials to process your request.'); window.location.href='?p=login';</script>";
         exit();
     } else {
+        $email = sql_sanitize($demail);
+        $password = sql_sanitize($dpassword);
         $sql = "SELECT * FROM UserAccounts WHERE Username=?;";
         $stmt = mysqli_stmt_init($conn);
         if (!mysqli_stmt_prepare($stmt, $sql)) {
