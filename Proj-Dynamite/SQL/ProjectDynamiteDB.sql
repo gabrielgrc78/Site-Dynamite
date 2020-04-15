@@ -5,7 +5,7 @@ DROP TABLE IF EXISTS ProjectDynamite.UserAccounts;
 CREATE TABLE ProjectDynamite.UserAccounts (
     `UserId` INT(11) AUTO_INCREMENT PRIMARY KEY NOT NULL ,
     `Username` VARCHAR(50) NOT NULL ,
-    `Password` VARCHAR(50) NOT NULL ,
+    `Password` VARCHAR(62) NOT NULL ,
     `Userlevel` ENUM('Student', 'Faculty', 'Admin') NULL ,
     `UserStatus` BOOLEAN NOT NULL ,
     `CreatedDate` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ,
