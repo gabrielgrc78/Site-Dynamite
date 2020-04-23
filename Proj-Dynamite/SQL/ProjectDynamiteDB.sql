@@ -19,7 +19,7 @@ CREATE TABLE ProjectDynamite.SecurityLogs (
     `lastlogin` TIMESTAMP NULL DEFAULT NULL,
     CONSTRAINT `securitylogs_ibfk_1` FOREIGN KEY (`Username`)
         REFERENCES `UserAccounts` (`Username`)
-        ON DELETE CASCADE
+        ON DELETE CASCADE ON UPDATE CASCADE
 )  ENGINE=INNODB AUTO_INCREMENT=1;
 
 DROP TABLE IF EXISTS projectdynamite.ClassRoster;
